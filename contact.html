@@ -1,0 +1,24 @@
+{% if form.errors %}
+  <div class="alert alert-danger">
+    <ul>
+      {% for error in form.errors.values() %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+<h1>Contact Me</h1>
+
+<form action="/contact" method="post">
+  {{ form.name.label }}
+  {{ form.name(class="form-control") }}
+
+  {{ form.email.label }}
+  {{ form.email(class="form-control") }}
+
+  {{ form.message.label }}
+  {{ form.message(class="form-control") }}
+
+  <input type="submit" value="Submit" class="btn btn-primary">
+</form>
